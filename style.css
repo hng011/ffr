@@ -44,7 +44,7 @@ body {
 }
 
 .flower {
-    margin-bottom: 100px;
+    margin-bottom: 130px;
 }
 
 .stem {
@@ -59,7 +59,6 @@ body {
 
 .p {
     border-radius: 70%;
-
 }
 
 .p, .midpetal {
@@ -79,6 +78,12 @@ body {
 
 .p, .midpetal, .mid {
     border: .5px solid rgb(129, 154, 114);
+}
+
+.mid:hover {
+    transform: scale(.9);
+    cursor: pointer;
+    transition: .5s;
 }
 
 .petal1 {
@@ -116,12 +121,18 @@ body {
     transform: rotate(90deg);
 }
 
+@keyframes clickme {
+    0% {transform: scale(1);}
+    50% {transform: scale(.95);}
+    0% {transform: scale(1);}
+}
+
 .midpetal {
     height: 38px;
     width: 135px;
     position: absolute;
     border-radius: 50%;
-    transform: rotate(0);
+    transform: rotate(0);;
 }
 
 .mid {
@@ -130,4 +141,16 @@ body {
     z-index: 3;
     position: absolute;
     border-radius: 100%;
+    transition: .5s;
+    padding: 5px;
+}
+
+.flower1 .mid {
+    animation: clickme 3s infinite;
+}
+
+.flower1 .mid:hover span::before{
+    content: "Click !!!!";
+    transition: .6s;
+    font-size: 10px;
 }
